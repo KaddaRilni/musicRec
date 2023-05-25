@@ -13,7 +13,7 @@ To get started with MusicRecommender, follow these steps:
 
 2. Navigate to the project directory:
    ```shell
-   cd MusicRecommender
+   cd musicRec
 3. Install the required dependencies using pip:
     ```shell 
     pip install -r requirements.txt
