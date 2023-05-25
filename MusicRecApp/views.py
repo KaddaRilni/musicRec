@@ -12,7 +12,7 @@ from .helpers import process_mp3, initilization, save_uploaded_song, getSimilarS
 def init(request):
     initilization()
 
-    return render(request, template_name='init.html')
+    return redirect('show_songs')
 def upload_mp3(request):
     form = MP3UploadForm(request.POST, request.FILES)
     if form.is_valid():
