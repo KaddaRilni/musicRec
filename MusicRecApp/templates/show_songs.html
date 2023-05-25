@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Songs</h1>
+<ul>
+  {% for song in songs %}
+    <li>
+      <div class="song-container">
+        <div class="song-info">
+          <span>{{ song.0 }}</span>
+        </div>
+        <div class="song-actions">
+          <div class="song-actions-right">
+            <form action="{% url 'show_similar_songs' song.1 %}" method="post">
+              {% csrf_token %}
+              <button class="similar-btn" type="submit">Show Similar Songs</button>
+            </form>
+            <form action="{% url 'delete_song' song.1 %}" method="post">
+              {% csrf_token %}
+              <button class="delete-btn" type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

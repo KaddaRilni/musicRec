@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Similar songs to:</h2>
+  <p>{{ song_path }}</p>
+
+  <h2>Similar Songs:</h2>
+  <ul>
+    {% for song in similar_songs %}
+      <li>{{ song.path }} (Score: {{ song.score }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
